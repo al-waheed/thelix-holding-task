@@ -3,7 +3,6 @@ import { ToastContainer } from "react-toastify";
 import Navbar from './pages/Navbar'
 import Products from './pages/Products'
 import Contact from './pages/Contact'
-import FAQ from './pages/FAQ'
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </div>
          <ToastContainer />

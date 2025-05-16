@@ -25,12 +25,12 @@ const Products = () => {
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   useEffect(() => {
-    fetch("/mockApi.json")
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch(setProducts(data));
-      })
-      .catch((e) => console.log(e));
+      fetch("/mockApi.json")
+        .then((res) => res.json())
+        .then((data) => {
+          dispatch(setProducts(data));
+        })
+        .catch((e) => console.log(e));
   }, [dispatch]);
 
   const toggleModal = () => {
@@ -40,7 +40,7 @@ const Products = () => {
   const handleAddProduct = (product) => {
     const newProduct = {
       ...product,
-      id: uuidv4,
+      id: uuidv4(),
     };
     dispatch(addProduct(newProduct));
   };
@@ -100,40 +100,44 @@ const Products = () => {
           ))
         )}
       </div>
-
-      <div className="mt-6 flex justify-center">
-        <nav className="flex items-center gap-2">
-          <button
-            onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
-            disabled={currentPage === 1}
-            className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
-          >
-            Previous
-          </button>
-
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+      {totalPages > 1 && (
+        <div className="mt-6 flex justify-center">
+          <nav className="flex items-center gap-2">
             <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`px-3 py-1 rounded ${
-                currentPage === page ? "bg-blue-500 text-white" : "bg-gray-200"
-              }`}
+              onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
+              disabled={currentPage === 1}
+              className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
             >
-              {page}
+              Previous
             </button>
-          ))}
 
-          <button
-            onClick={() =>
-              setCurrentPage((page) => Math.min(page + 1, totalPages))
-            }
-            disabled={currentPage === totalPages}
-            className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
-          >
-            Next
-          </button>
-        </nav>
-      </div>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-3 py-1 rounded ${
+                  currentPage === page
+                    ? "bg-gray-500 text-white"
+                    : "bg-gray-200"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              onClick={() =>
+                setCurrentPage((page) => Math.min(page + 1, totalPages))
+              }
+              disabled={currentPage === totalPages}
+              className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
+            >
+              Next
+            </button>
+          </nav>
+        </div>
+      )}
+
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow w-[50%] relative">

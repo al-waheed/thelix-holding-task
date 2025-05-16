@@ -81,12 +81,6 @@ export default function Navbar() {
             >
               Contact
             </Link>
-            <Link
-              to="/faq"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md"
-            >
-              FAQ
-            </Link>
           </div>
         </div>
 
@@ -106,13 +100,6 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Contact
-              </Link>
-              <Link
-                to="/faq"
-                className="block px-3 py-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                onClick={() => setIsOpen(false)}
-              >
-                FAQ
               </Link>
               <input
                 type="text"

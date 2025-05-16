@@ -14,7 +14,6 @@ const NewProduct = (props) => {
     const reader = new FileReader();
     reader.onloadend = () => {
       setFieldValue("image", reader.result);
-      toast.success(`${file.name} uploaded successfully!`);
     };
     reader.onerror = () => toast.error("Failed to read file");
     reader.readAsDataURL(file);
@@ -30,16 +29,22 @@ const NewProduct = (props) => {
         image: "",
       }}
       validationSchema={Yup.object({
-        productName: Yup.string().required("Product name is required"),
-        category: Yup.string().required("Category is required"),
+        productName: Yup.string()
+          .matches(/^[A-Za-z\s]+$/, "Product name must contain only letters")
+          .required("Product name is required"),
+        category: Yup.string()
+          .matches(/^[A-Za-z\s]+$/, "Category must contain only letters")
+          .required("Category is required"),
         price: Yup.number()
-          .required("Price is required")
-          .positive("Price must be a positive number"),
-        description: Yup.string().required("Description is required"),
+          .typeError("Price must be a number")
+          .required("Price is required"),
+        description: Yup.string()
+          .matches(/^[A-Za-z\s]+$/, "Description must contain only letters")
+          .required("Description is required"),
         image: Yup.string().required("Image is required"),
       })}
       onSubmit={(values, { resetForm }) => {
-       AddProduct(values);
+        AddProduct(values);
         resetForm();
         onClose();
         toast.success("Product added successfully!");
@@ -137,7 +142,7 @@ const NewProduct = (props) => {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded"
+              className="bg-gray-500 text-white px-4 py-2 rounded"
             >
               Add Product
             </button>
