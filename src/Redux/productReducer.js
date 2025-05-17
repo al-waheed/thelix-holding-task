@@ -34,9 +34,6 @@ const productSlice = createSlice({
               (product) => product.category === action.payload
             ));
     },
-    resetProducts: (state, action) => {
-      state.products = [...state.allProducts];
-    },
   },
 });
 
@@ -44,7 +41,6 @@ export const {
   setProducts,
   addProduct,
   searchProduct,
-  resetProducts,
   productCategory,
 } = productSlice.actions;
 export default productSlice.reducer;

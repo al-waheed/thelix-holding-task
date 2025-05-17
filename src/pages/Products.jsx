@@ -3,7 +3,6 @@ import {
   setProducts,
   addProduct,
   productCategory,
-  resetProducts,
 } from "../Redux/productReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -54,15 +53,6 @@ const Products = () => {
     ...new Set(products?.map((product) => product.category)),
   ];
 
-  const handleCategoryFilter = (category) => {
-    if (category === "All") {
-      dispatch(resetProducts());
-    } else {
-      dispatch(productCategory(category));
-      setCurrentPage(1);
-    }
-  };
-
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -81,10 +71,10 @@ const Products = () => {
           id="category"
           className="my-4 w-[20%] h-11 p-2 rounded border-gray-300 shadow-sm sm:text-sm outline-none focus:border-blue-500 focus:ring-blue-500"
           onChange={(e) => {
-            handleCategoryFilter(e.target.value);
+            dispatch(productCategory(e.target.value));
           }}
         >
-          <option value="All" className="font-bold">
+          <option value="All" className="font-bold uppercase">
             All Categories
           </option>
           {AllProductsCategory.map((category) => (
