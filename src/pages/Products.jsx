@@ -26,11 +26,11 @@ const Products = () => {
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   useEffect(() => {
-      fetch("/mockApi.json")
-        .then((res) => res.json())
-        .then((data) => {
-          dispatch(setProducts(data));
-        });
+    fetch("/mockApi.json")
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(setProducts(data));
+      });
   }, [dispatch]);
 
   const toggleModal = () => {
@@ -74,12 +74,14 @@ const Products = () => {
         <select
           name="category"
           id="category"
-          className="m-4 w-[20%] h-10 rounded border-gray-300 shadow-sm sm:text-sm outline-none focus:border-blue-500 focus:ring-blue-500"
+          className="my-4 w-[20%] h-11 p-2 rounded border-gray-300 shadow-sm sm:text-sm outline-none focus:border-blue-500 focus:ring-blue-500"
           onChange={(e) => {
             handleCategoryFilter(e.target.value);
           }}
         >
-          <option value="All">All Categories</option>
+          <option value="All" className="font-bold">
+            All Categories
+          </option>
           {AllProductsCategory.map((category) => (
             <option key={category} value={category}>
               {category}
@@ -104,7 +106,10 @@ const Products = () => {
               <h2 className="text-lg font-semibold">{product.productName}</h2>
               <p className="text-gray-600">{product.category}</p>
               <p className="text-blue-600 font-bold mt-2">₦ {product.price}</p>
-              <p className="text-sm font-light italic mt-2"> {product.description}</p>
+              <p className="text-sm font-light italic mt-2">
+                {" "}
+                {product.description}
+              </p>
             </div>
           ))
         )}
