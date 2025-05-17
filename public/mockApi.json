@@ -4,7 +4,7 @@
     "productName": "Snapback Face Cap",
     "price": 2500,
     "category": "Face Cap",
-    "image": "https://via.placeholder.com/300x200?text=Snapback+Cap",
+    "image": "/image/Snapback Face Cap.jpg",
     "description": "Stylish snapback cap perfect for casual wear and sunny days."
   },
   {
@@ -12,7 +12,7 @@
     "productName": "Noise-Cancelling Headphones",
     "price": 12000,
     "category": "Headset",
-    "image": "https://via.placeholder.com/300x200?text=Headphones",
+    "image": "/image/Noise-Cancelling Headphones.jpeg",
     "description": "Experience immersive sound with active noise cancellation."
   },
   {
@@ -20,7 +20,7 @@
     "productName": "High-Top Sneakers",
     "price": 15900,
     "category": "Sneakers",
-    "image": "https://via.placeholder.com/300x200?text=High+Top+Sneakers",
+    "image": "/image/High-Top Sneakers.jpeg",
     "description": "High-top sneakers that blend comfort with street style."
   },
   {
@@ -28,7 +28,7 @@
     "productName": "4K Action Camera",
     "price": 25000,
     "category": "Electronics",
-    "image": "https://via.placeholder.com/300x200?text=Action+Camera",
+    "image": "/image/4K Action Camera.jpeg",
     "description": "Capture your adventures in stunning 4K resolution."
   },
   {
@@ -36,7 +36,7 @@
     "productName": "Fitness Tracker Watch",
     "price": 10500,
     "category": "Wristwatch",
-    "image": "https://via.placeholder.com/300x200?text=Fitness+Watch",
+    "image": "/image/Fitness Tracker Watch.jpeg",
     "description": "Track your steps, heart rate, and sleep with ease."
   },
   {
@@ -44,7 +44,7 @@
     "productName": "Digital Smartwatch",
     "price": 18000,
     "category": "Wristwatch",
-    "image": "https://via.placeholder.com/300x200?text=Smartwatch",
+    "image": "/image/Digital Smartwatch.jpeg",
     "description": "Stay connected and monitor your health with this modern smartwatch."
   },
   {
@@ -52,7 +52,7 @@
     "productName": "Men's Running Sneakers",
     "price": 14500,
     "category": "Sneakers",
-    "image": "https://via.placeholder.com/300x200?text=Running+Sneakers",
+    "image": "/image/Men's Running Sneakers.jpeg",
     "description": "Engineered for performance and long-distance comfort."
   },
   {
@@ -60,7 +60,7 @@
     "productName": "Wireless Earbuds",
     "price": 7500,
     "category": "Headset",
-    "image": "https://via.placeholder.com/300x200?text=Earbuds",
+    "image": "/image/Wireless Earbuds.jpeg",
     "description": "Compact, high-quality earbuds with long battery life."
   },
   {
@@ -68,7 +68,7 @@
     "productName": "Baseball Cap",
     "price": 2000,
     "category": "Face Cap",
-    "image": "https://via.placeholder.com/300x200?text=Baseball+Cap",
+    "image": "/image/Baseball Cap.jpeg",
     "description": "Classic baseball cap with adjustable strap and breathable fabric."
   },
   {
@@ -76,7 +76,7 @@
     "productName": "Women's Fashion Sneakers",
     "price": 13500,
     "category": "Sneakers",
-    "image": "https://via.placeholder.com/300x200?text=Fashion+Sneakers",
+    "image": "/image/Women's Fashion Sneakers.jpeg",
     "description": "Stylish sneakers for everyday urban fashion."
   },
   {
@@ -84,7 +84,7 @@
     "productName": "Wireless Charger",
     "price": 6500,
     "category": "Electronics",
-    "image": "https://via.placeholder.com/300x200?text=Wireless+Charger",
+    "image": "/image/Wireless Charger.jpeg",
     "description": "Fast and efficient wireless charging pad for all devices."
   },
   {
@@ -92,7 +92,7 @@
     "productName": "Gaming Headset",
     "price": 16000,
     "category": "Headset",
-    "image": "https://via.placeholder.com/300x200?text=Gaming+Headset",
+    "image": "/image/Gaming Headset.jpeg",
     "description": "Crisp audio and noise-isolating mic for immersive gaming."
   },
   {
@@ -100,7 +100,7 @@
     "productName": "Flat-Brim Face Cap",
     "price": 2800,
     "category": "Face Cap",
-    "image": "https://via.placeholder.com/300x200?text=Flat+Brim+Cap",
+    "image": "/image/Flat-Brim Face Cap.jpeg",
     "description": "Urban-style flat-brim cap with a modern touch."
   },
   {
@@ -108,7 +108,7 @@
     "productName": "Bluetooth Speaker",
     "price": 9900,
     "category": "Electronics",
-    "image": "https://via.placeholder.com/300x200?text=Bluetooth+Speaker",
+    "image": "/image/Bluetooth Speaker.jpeg",
     "description": "Portable speaker with deep bass and Bluetooth 5.0."
   },
   {
@@ -116,7 +116,7 @@
     "productName": "Analog Leather Wristwatch",
     "price": 9500,
     "category": "Wristwatch",
-    "image": "https://via.placeholder.com/300x200?text=Leather+Watch",
+    "image": "/image/Analog Leather Wristwatch.jpeg",
     "description": "Classic timepiece with genuine leather strap."
   }
 ]
