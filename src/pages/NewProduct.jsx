@@ -38,10 +38,8 @@ const NewProduct = (props) => {
         price: Yup.number()
           .typeError("Price must be a number")
           .required("Price is required"),
-        description: Yup.string()
-          .matches(/^[A-Za-z\s]+$/, "Description must contain only letters")
-          .required("Description is required"),
-        image: Yup.string().required("Image is required"),
+        description: Yup.string().required("Description is required"),
+        image: Yup.string().required("Product image is required"),
       })}
       onSubmit={(values, { resetForm }) => {
         AddProduct(values);

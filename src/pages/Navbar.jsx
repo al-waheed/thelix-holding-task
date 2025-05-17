@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link to="/" className="flex items-center">
-              <span className="text-xl font-bold text-gray-800">Dashboard</span>
+              <span className="text-xl font-bold text-gray-800">Store Dashboard</span>
             </Link>
           </div>
 
@@ -62,9 +62,9 @@ export default function Navbar() {
           <div className="hidden md:flex md:items-center md:space-x-4">
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search Product..."
               onChange={handleSearchProduct}
-              className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 w-96 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 

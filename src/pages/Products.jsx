@@ -3,6 +3,7 @@ import {
   setProducts,
   addProduct,
   productCategory,
+  resetProducts,
 } from "../Redux/productReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -11,7 +12,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const Products = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.product.products) || [];
+  const products = useSelector((state) => state?.product?.products);
   const [open, setOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 8;
@@ -29,8 +30,7 @@ const Products = () => {
         .then((res) => res.json())
         .then((data) => {
           dispatch(setProducts(data));
-        })
-        .catch((e) => console.log(e));
+        });
   }, [dispatch]);
 
   const toggleModal = () => {
@@ -46,8 +46,17 @@ const Products = () => {
   };
 
   const AllProductsCategory = [
-    ...new Set(products.map((item) => item.category)),
+    ...new Set(products?.map((product) => product.category)),
   ];
+
+  const handleCategoryFilter = (category) => {
+    if (category === "All") {
+      dispatch(resetProducts());
+    } else {
+      dispatch(productCategory(category));
+      setCurrentPage(1);
+    }
+  };
 
   return (
     <div>
@@ -67,7 +76,7 @@ const Products = () => {
           id="category"
           className="m-4 w-[20%] h-10 rounded border-gray-300 shadow-sm sm:text-sm outline-none focus:border-blue-500 focus:ring-blue-500"
           onChange={(e) => {
-            dispatch(productCategory(e.target.value));
+            handleCategoryFilter(e.target.value);
           }}
         >
           <option value="All">All Categories</option>
