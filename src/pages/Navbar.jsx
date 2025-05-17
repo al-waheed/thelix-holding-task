@@ -15,10 +15,10 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-28">
           <div className="flex">
             <Link to="/" className="flex items-center">
-              <span className="text-xl font-bold text-gray-800">Store Dashboard</span>
+              <span className="text-2xl font-bold text-gray-800">Store Dashboard</span>
             </Link>
           </div>
 
