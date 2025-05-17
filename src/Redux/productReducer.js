@@ -16,6 +16,7 @@ const productSlice = createSlice({
     addProduct: (state, action) => {
       state.products.unshift(action.payload);
       state.allProducts.unshift(action.payload);
+      localStorage.setItem("products", JSON.stringify(state.allProducts));
     },
     searchProduct: (state, action) => {
       const searchTerm = action.payload.toLowerCase();

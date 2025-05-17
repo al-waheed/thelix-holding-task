@@ -26,11 +26,16 @@ const Products = () => {
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   useEffect(() => {
-    fetch("/mockApi.json")
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch(setProducts(data));
-      });
+    const storedProducts = localStorage.getItem("products");
+    if (storedProducts) {
+      dispatch(setProducts(JSON.parse(storedProducts)));
+    } else {
+      fetch("/mockApi.json")
+        .then((res) => res.json())
+        .then((data) => {
+          dispatch(setProducts(data));
+        });
+    }
   }, [dispatch]);
 
   const toggleModal = () => {
